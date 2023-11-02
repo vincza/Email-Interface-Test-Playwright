@@ -1,4 +1,3 @@
-@manual
 Feature: Compose Email Feature
 
   Background: 

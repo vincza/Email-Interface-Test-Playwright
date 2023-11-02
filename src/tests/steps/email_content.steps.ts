@@ -47,9 +47,17 @@ Then('I see the reply email dialog is open with the right values', async () => {
 })
 
 When('I open the forward email dialog', async () => {
-    await emailContent.setEmail();
+    await emailContent.setBody();
 
-    await emailContent.getReplyButton.click({ timeout: 7000 });
+    await emailContent.getForwardButton.click({ timeout: 7000 });
+})
+
+Then('I see the forward email dialog is open with the right values', async () => {
+    expect(composeEmail.getComposeEmailDialog).toBeVisible();
+
+    expect(await composeEmail.getEmailBody.textContent()).toEqual(emailContent.getBody);
+
+    expect(composeEmail.getSubjectInput).toHaveValue(emailContent.getSubject);
 })
 
 

@@ -1,4 +1,3 @@
-@manual
 Feature: Email Inbox Test Feature
 
   Background: 

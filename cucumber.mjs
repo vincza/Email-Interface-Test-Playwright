@@ -12,7 +12,7 @@ const config = {
     requireModule: [
         "ts-node/register"
     ],
-    dryRun: true
+    dryRun: false
     
 };
 

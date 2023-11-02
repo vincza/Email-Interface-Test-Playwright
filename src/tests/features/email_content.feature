@@ -19,6 +19,8 @@ Feature: Email Content Feature
   Scenario: Forward an email
     When I select the email with subject "Street Art"
     Then I see the email content is correct
+    When I open the forward email dialog
+    Then I see the forward email dialog is open with the right values
 
   @manual
   Scenario: Forward an email without address

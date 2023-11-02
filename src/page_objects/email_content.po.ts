@@ -13,6 +13,8 @@ export class EmailContent {
 
     private email: string = '';
 
+    private body: string = '';
+
     constructor(page: Page) {
         this.page = page;
     }
@@ -35,6 +37,10 @@ export class EmailContent {
 
     get getLabel() {
         return this.label;
+    }
+
+    get getBody() {
+        return this.body;
     }
 
     /**
@@ -87,6 +93,14 @@ export class EmailContent {
         return this.page.locator('button', { has: this.page.locator('i.ion-forward') });
     }
 
+    /**
+       * Element corresponding to forward button
+     */
+    get getBodyLocator() {
+        return this.page.locator('div.message-body');
+    }
+
+
 
     setPersonalInformation(firstName: string, lastName: string, subject: string, label: string) {
         this.firstName = firstName;
@@ -97,5 +111,9 @@ export class EmailContent {
 
     async setEmail() {
         this.email = await this.getEmailLocator.textContent() ?? '';
+    }
+
+    async setBody() {
+        this.body = await this.getBodyLocator.textContent() ?? '';
     }
 }
