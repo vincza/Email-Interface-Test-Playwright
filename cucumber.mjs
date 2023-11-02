@@ -1,6 +1,9 @@
 const config = {
     format: [
-        "@cucumber/pretty-formatter"
+        "progress-bar",
+        "@cucumber/pretty-formatter",
+        "html:cucumber-report.html"
+
     ],
     paths: [
         "src/tests/features"
