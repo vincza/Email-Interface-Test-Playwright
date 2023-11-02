@@ -1,3 +1,4 @@
+@manual
 Feature: Compose Email Feature
 
   Background: 
@@ -30,6 +31,7 @@ Feature: Compose Email Feature
     Then I check the image is present in the input
     When I insert a video link
     Then I check the video link is present in the input
+    And I send the email
 
   @manual
   Scenario: Compose Email and send without address

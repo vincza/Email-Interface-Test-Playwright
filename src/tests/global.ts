@@ -3,6 +3,8 @@ import { Browser, BrowserContext, Page, chromium } from "@playwright/test";
 import { Navigation } from "../page_objects/navigation.po";
 import { EmailInbox } from "../page_objects/email_inbox.po";
 import { ComposeEmail } from "../page_objects/compose_email.po";
+import exp from "constants";
+import { EmailContent } from "../page_objects/email_content.po";
 
 export let browser: Browser;
 
@@ -15,6 +17,8 @@ export let navigation: Navigation
 export let emailInbox: EmailInbox
 
 export let composeEmail: ComposeEmail
+
+export let emailContent: EmailContent
 
 
 setDefaultTimeout(120000)
@@ -42,6 +46,8 @@ Before(async function () {
     emailInbox = new EmailInbox(page);
 
     composeEmail = new ComposeEmail(page);
+
+    emailContent = new EmailContent(page);
 
 })
 

@@ -28,6 +28,19 @@ export class EmailInbox {
         return this.getEmailRow(subject).locator('div.mail-checkbox');
     }
 
+    /**
+        * Element corresponding to sender name
+     */
+    getEmailSenderName(subject: string) {
+        return this.getEmailRow(subject).locator('span.name');
+    }
+
+    /**
+        * Element corresponding to email label
+     */
+    getEmailLabel(subject: string) {
+        return this.getEmailRow(subject).locator('span.label');
+    }
 
     /**
         * Element corresponding to select all emails checkbox
